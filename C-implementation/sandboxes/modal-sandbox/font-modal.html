@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Typster</title>
+		<link rel="stylesheet" type="text/css" href="css/font-modal.css">
+		<script src="libraries/jquery/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="libraries/handlebars-v3.0.3.js"></script>
+		<script type="text/javascript" src="js/handle-bars.js"></script>
+	</head>
+
+	<BODY oncontextmenu="return false">
+		<div id="font-dialogue">
+			<div id="font-dialogue-text">
+				<input id="h1-text" type="text" name="fname" value="The New Google Glass Piece">
+			</div>
+			<div id="font-dialogue-options">
+				A <a href="#">body</a>/<a href="#">header</a>/<a href="#">title</a> font that does well in <a href="#">Italic</a>/<a href="#">Non-italic</a> and is best weighted in <a href="#">light</a>/<a href="#">regular</a>/<a href="#">Semibold</a>/<a href="#">Bold</a>. It works well in <a href="#">white</a>/<a href="#">black</a>.
+			</div>
+		</div>
+
+	<script id="font-modal-template" type="text/x-handlebars-template">
+		{{#each fonts}}
+			<div class="font-modal" id="{{font}}">
+				<div class="font-modal-text" style="font-family:{{font}}";>
+					<h2 class="font-modal-text-demo">{{font}}</h2>
+				</div>
+
+				<div class="modal-footer">
+
+					<h3>{{font}}</h3>
+					<ul class="weight-list" style="font-family:{{font}}";>
+						<li>i</li>
+						<li><b>i</b></li>
+						<li><i>i</i></li>
+						<li><b><i>i</i></b></li>
+					</ul>
+				</div>
+			</div>
+		{{/each}}
+	</script>
+
+	<div id="list">
+	</div>
+    
+    <script type="text/javascript">
+      $(document).ready(function() {
+        
+        // compile our template
+        var template = Handlebars.compile($("#font-modal-template").html());
+
+        var data = {
+          fonts:[
+			{ font:"Adobe Arabic"},
+			{ font:"Adobe Caslon Pro"},
+			{ font:"Adobe Devanagari"},
+			{ font:"Adobe Fan Heiti Std"},
+			{ font:"Adobe Fangsong Std"},
+			{ font:"Adobe Garamond Pro"},
+			{ font:"Adobe Gothic Std"},
+			{ font:"Adobe Gurmukhi"},
+			{ font:"Adobe Hebrew"},
+			{ font:"Adobe Heiti Std"},
+			{ font:"Adobe Kaiti Std"},
+			{ font:"Adobe Ming Std"},
+			{ font:"Adobe Myungjo Std"},
+			{ font:"Adobe Naskh"},
+			{ font:"Adobe Song Std"},
+			{ font:"Aileron"},
+			{ font:"Airplane"},
+			{ font:"Al Bayan"},
+			{ font:"Al Nile"},
+			{ font:"Al Tarikh"},
+			{ font:"Alegreya"},
+			{ font:"Aleo"},
+			{ font:"Amatic SC"},
+			{ font:"American Captain"},
+			{ font:"American Typewriter"},
+			{ font:"Andale Mono"},
+			{ font:"Anonymous Pro"},
+			{ font:"another shabby"},
+			{ font:"Antonio"},
+			{ font:"Apple Braille"},
+			{ font:"Apple Chancery"},
+			{ font:"Apple Color Emoji"},
+			{ font:"Apple SD Gothic Neo"},
+			{ font:"Apple Symbols"},
+			{ font:"AppleGothic"},
+			{ font:"AppleMyungjo"},
+			{ font:"Archive"},
+			{ font:"Arial"},
+			{ font:"Arial Black"},
+			{ font:"Arial Hebrew"},
+			{ font:"Arial Hebrew Scholar"},
+			{ font:"Arial Narrow"},
+			{ font:"Arial Unicode MS"},
+			{ font:"Arvo"},
+			{ font:"Athelas"},
+			{ font:"Avenir"},
+			{ font:"Avenir Next"},
+			{ font:"Avenir Next Condensed"},
+			{ font:"Ayuthaya"},
+			{ font:"Bad Script"},
+			{ font:"Baghdad"},
+			{ font:"Bangla MN"},
+			{ font:"Bangla Sangam MN"},
+			{ font:"Baoli SC"},
+			{ font:"Baskerville"},
+			{ font:"Baskerville Old Face"},
+			{ font:"Batang"},
+			{ font:"Bauhaus 93"},
+			{ font:"Bebas Neue"},
+			{ font:"Beirut"},
+			{ font:"Bell MT"},
+			{ font:"Besom 2"},
+			{ font:"Big Caslon"},
+			{ font:"Birch Std"},
+			{ font:"Bitter"},
+			{ font:"Blackoak Std"},
+			{ font:"Blanch"},
+			{ font:"Bodoni 72"},
+			{ font:"Bodoni 72 Oldstyle"},
+			{ font:"Bodoni 72 Smallcaps"},
+			{ font:"Bodoni Ornaments"},
+			{ font:"Bodoni Std"},
+			{ font:"Book Antiqua"},
+			{ font:"Bookman Old Style"},
+			{ font:"Bookshelf Symbol 7"},
+			{ font:"bosun"},
+			{ font:"BPreplay"},
+			{ font:"Bradley Hand"},
+			{ font:"Braggadocio"},
+			{ font:"Brush Script MT"},
+			{ font:"Brush Script Std"},
+			{ font:"Calibri"},
+			{ font:"Calisto MT"},
+			{ font:"Cambria"},
+			{ font:"Cambria Math"},
+			{ font:"Candara"},
+			{ font:"Cardenio Modern"},
+			{ font:"Centaur MT Std"},
+			{ font:"Century"},
+			{ font:"Century Gothic"},
+			{ font:"Century Schoolbook"},
+			{ font:"CF Jack Story"},
+			{ font:"Chalkboard"},
+			{ font:"Chalkboard SE"},
+			{ font:"Chalkduster"},
+			{ font:"Changa One"},
+			{ font:"Chaparral Pro"},
+			{ font:"Charlemagne Std"},
+			{ font:"Charter"},
+			{ font:"CHAWP"},
+			{ font:"Cheddar Jack"},
+			{ font:"Chivo"},
+			{ font:"Chomp"},
+			{ font:"Christopherhand"},
+			{ font:"Clear Sans"},
+			{ font:"Clear Sans Light"},
+			{ font:"Clear Sans Medium"},
+			{ font:"Clear Sans Thin"},
+			{ font:"Cochin"},
+			{ font:"Colonna MT"},
+			{ font:"Colors Of Autumn"},
+			{ font:"Comic Neue"},
+			{ font:"Comic Neue Angular"},
+			{ font:"Comic Sans MS"},
+			{ font:"Consolas"},
+			{ font:"Constantia"},
+			{ font:"Cooper Black"},
+			{ font:"Cooper Std"},
+			{ font:"Copperplate"},
+			{ font:"Corbel"},
+			{ font:"Corsiva Hebrew"},
+			{ font:"Courier"},
+			{ font:"Courier New"},
+			{ font:"Cubano"},
+			{ font:"Curlz MT"},
+			{ font:"Damascus"},
+			{ font:"Damion"},
+			{ font:"Darkwoman"},
+			{ font:"DecoType Naskh"},
+			{ font:"Delana-Tran-4-wide"},
+			{ font:"Desdemona"},
+			{ font:"Devanagari MT"},
+			{ font:"Devanagari Sangam MN"},
+			{ font:"Didot"},
+			{ font:"DIN 1451 Std"},
+			{ font:"DIN 30640 Std"},
+			{ font:"DIN Alternate"},
+			{ font:"Diwan Kufi"},
+			{ font:"Diwan Thuluth"},
+			{ font:"DJB What a Babe"},
+		  ]
+		};
+        
+        $("#list").html(template(data));
+      });
+    </script>
+
+	</BODY>
+	<script type="text/javascript"> 
+		$(document).ready(function(){
+			$(".weight-list li:first-child").click(function(){
+					$( this ).parent().parent().siblings().children("h2").css("font-style","normal");
+					$( this ).parent().parent().siblings().children("h2").css("font-weight","400");
+
+					$( this ).siblings().css("background-color","#E0E0E0"); 
+					$( this ).css("background-color","#EAEAEA");
+					console.log("first");
+
+					$( this ).parent().siblings("h3").text($( this ).parent().css("font-family") + " (Regular)");
+			});
+			$(".weight-list li:nth-child(2)").click(function(){
+					$( this ).parent().parent().siblings().children("h2").css("font-style","normal");
+					$( this ).parent().parent().siblings().children("h2").css("font-weight","bolder");
+					
+					$( this ).siblings().css("background-color","#E0E0E0");
+					$( this ).css("background-color","#EAEAEA");
+					console.log("second");
+
+					$( this ).parent().siblings("h3").text($( this ).parent().css("font-family") + " (Bold)");
+			});
+			$(".weight-list li:nth-child(3)").click(function(){
+					$( this ).parent().parent().siblings().children("h2").css("font-weight","400");
+					$( this ).parent().parent().siblings().children("h2").css("font-style","italic");
+
+					$( this ).siblings().css("background-color","#E0E0E0");
+					$( this ).css("background-color","#EAEAEA");
+					console.log("third");
+
+					$( this ).parent().siblings("h3").text($( this ).parent().css("font-family") + " (Italic)");
+			});
+			$(".weight-list li:nth-child(4)").click(function(){
+					$( this ).parent().parent().siblings().children("h2").css("font-style","italic");
+					$( this ).parent().parent().siblings().children("h2").css("font-weight","bolder");
+					
+					$( this ).siblings().css("background-color","#E0E0E0");
+					$( this ).css("background-color","#EAEAEA");
+					console.log("fourth");
+
+					$( this ).parent().siblings("h3").text($( this ).parent().css("font-family") + " (Bold Italic)");
+			});
+			var st;
+			$(".font-modal").mousedown(function(event){
+				console.log(event);
+				st = event;
+				if(event.button==2){
+					console.log($( this ).css("border-color"));
+					if( $( this ).css("border-color") == "rgba(0, 0, 0, 0)" ){
+						$( this ).css("border-color","lightgreen");	
+					}
+					else{
+						$( this ).css("border-color","rgba(0, 0, 0, 0)");
+					}
+				}
+			});
+
+			$("h2").click(function(){
+					if($( this ).css("font-weight") == 400){
+						//font is normal or italicized
+						if($( this ).css("font-style") == "normal"){
+							$( this ).css("font-weight","bold");
+
+							$( this ).parent().siblings(".modal-footer").children("ul").children("li").css("background-color","#E0E0E0");
+							$( this ).parent().siblings(".modal-footer").children("ul").children("li:nth-child(2)").css("background-color","#EAEAEA");
+
+							console.log($(this).parent().siblings(".modal-footer").children("h3").text());
+							console.log($(this).parent().parent()[0].id);
+
+							$( this ).parent().siblings(".modal-footer").children("h3").text($( this ).parent().parent()[0].id + " (Regular)");
+						}
+						else if($( this ).css("font-style") == "italic"){
+							$( this ).css("font-style","italic");
+							$( this ).css("font-weight","bold");
+
+							$( this ).parent().siblings(".modal-footer").children("ul").children("li").css("background-color","#E0E0E0");
+							$( this ).parent().siblings(".modal-footer").children("ul").children("li:nth-child(4)").css("background-color","#EAEAEA");
+						
+							$( this ).parent().siblings(".modal-footer").children("h3").text($( this ).parent().parent()[0].id + " (bold italic)");
+						}
+					}
+					else if($( this ).css("font-weight") == "bold"){
+						//font is normal or italicized
+						if($( this ).css("font-style") == "italic"){
+							$( this ).css("font-style","normal");
+							$( this ).css("font-weight","400");
+
+							$( this ).parent().siblings(".modal-footer").children("ul").children("li").css("background-color","#E0E0E0");
+							$( this ).parent().siblings(".modal-footer").children("ul").children("li:nth-child(1)").css("background-color","#EAEAEA");
+
+							$( this ).parent().siblings(".modal-footer").children("h3").text($( this ).parent().parent()[0].id + " (Bold Italic)");
+						}
+						else if($( this ).css("font-style") == "normal"){
+							$( this ).css("font-style","italic");
+							$( this ).css("font-weight","normal");
+
+							$( this ).parent().siblings(".modal-footer").children("ul").children("li").css("background-color","#E0E0E0");
+							$( this ).parent().siblings(".modal-footer").children("ul").children("li:nth-child(3)").css("background-color","#EAEAEA");
+
+							$( this ).parent().siblings(".modal-footer").children("h3").text($( this ).parent().parent()[0].id + " (Bold)");
+						}
+					}
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+
+		replace_modal_text = function(){
+			$("h2").text($("input[type=text]").val());
+		}
+
+		$("input[type=text]").focusout(replace_modal_text);
+		$("#h1-text").keypress(function(e){
+			if(e.which == 13){replace_modal_text();};});
+	</script>
+</html>
