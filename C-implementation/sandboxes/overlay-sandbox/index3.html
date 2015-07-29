@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/content.css" />
+		<script src="js/jquery/jquery-2.1.0.min.js"></script>
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+<!-- morph-button morph-button-overlay morph-button-fixed active open scroll -->
+				<div class="morph-button morph-button-overlay morph-button-fixed active open scroll ">
+				<!-- <div class="morph-button morph-button-overlay morph-button-fixed active open scroll"> -->
+					<button type="button">More Info</button>
+					<div class="morph-content">
+						<div>
+							<div class="content-style-overlay">
+								<span class="icon icon-close">asdf</span>
+								<h2>About Parsley</h2>
+								<p id="dialogue-talk">What would you like to say?</p>
+							</div>
+						</div>
+					</div>
+				</div><!-- morph-button -->
+
+		<script src="js/classie.js"></script>
+		</script>
+		
+		<script src="js/uiMorphingButton_fixed.js"></script>
+		<script>
+			var el;
+			var element;
+			(function() {	
+				var docElem = window.document.documentElement, didScroll, scrollPosition;
+
+				// trick to prevent scrolling when opening/closing button
+				function noScrollFn() {
+					window.scrollTo( scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0 );
+				}
+
+				function noScroll() {
+					window.removeEventListener( 'scroll', scrollHandler );
+					window.addEventListener( 'scroll', noScrollFn );
+				}
+
+				function scrollFn() {
+					window.addEventListener( 'scroll', scrollHandler );
+				}
+
+				function canScroll() {
+					window.removeEventListener( 'scroll', noScrollFn );
+					scrollFn();
+				}
+
+				function scrollHandler() {
+					if( !didScroll ) {
+						didScroll = true;
+						setTimeout( function() { scrollPage(); }, 60 );
+					}
+				};
+
+				function scrollPage() {
+					scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
+					didScroll = false;
+				};
+
+				scrollFn();
+				
+				el = document.querySelector( '.morph-button' );
+				
+				element = new UIMorphingButton( el, {
+					closeEl : '.icon-close',
+					onBeforeOpen : function() {
+						// don't allow to scroll
+						noScroll();
+					},
+					onAfterOpen : function() {
+						// can scroll again
+						canScroll();
+						// add class "noscroll" to body
+						classie.addClass( document.body, 'noscroll' );
+						// add scroll class to main el
+						classie.addClass( el, 'scroll' );
+					},
+					onBeforeClose : function() {
+						// remove class "noscroll" to body
+						classie.removeClass( document.body, 'noscroll' );
+						// remove scroll class from main el
+						classie.removeClass( el, 'scroll' );
+						// don't allow to scroll
+						noScroll();
+					},
+					onAfterClose : function() {
+						// can scroll again
+						canScroll();
+					}
+				} );
+			})();
+		</script>
+
+		<script type="text/javascript">
+			var talk = [
+				"Hello! We help designers make sense of font pairings",
+				"Let\'s get started, what do you mean to say?",
+				"Perfect",
+				"How do you want to say it? ",
+				"Strong, empasized, underlined",
+				"Aweome, loading your fonts now"
+			];
+			
+		</script>
+	</body>
+</html>

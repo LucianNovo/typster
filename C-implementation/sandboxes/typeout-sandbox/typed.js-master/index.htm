@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typed.js - Type your heart out</title>
+    <!-- Get jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/typed.js" type="text/javascript"></script>
+    <script>
+    $(function(){
+
+
+        $("#typed").typed({
+            strings: [
+                "Hello! We help designers make sense of font pairings",
+                "Let\'s get started, what do you mean to say?(start typing"
+            ],
+            typeSpeed: 40,
+            backDelay: 500,
+            loop: false,
+            contentType: 'html', // or text
+            // defaults to false for infinite loop
+            loopCount: false,
+            callback: function(){ foo(console.log("done")); },
+            resetCallback: function() { newTyped(); }
+        });
+
+        $(".reset").click(function(){
+            $("#typed").typed('reset');
+        });
+
+    });
+
+    function newTyped(){ /* A new typed object */ }
+
+    function loadfonts(){
+        console.log("loadfonts");
+        setTimeout(function() {
+        // do something
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do second thing
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do something
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do second thing
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do something
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do second thing
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do something
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do second thing
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do something
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do second thing
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do something
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do second thing
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do something
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do second thing
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do something
+        $("input[name=myinput]").css("font-family",randomFont());
+        setTimeout(function() {
+        // do second thing
+        $("input[name=myinput]").css("font-family",randomFont());
+        }, 400);
+        }, 400);
+        }, 400);
+        }, 400);
+        }, 400);
+        }, 400);
+        }, 400);
+        }, 400);                             
+        }, 400);
+        }, 400);
+        }, 400);
+        }, 400);
+        }, 400);
+        }, 400);
+        }, 400);
+        }, 400);
+    }
+
+    function randomFont(){
+        var index = Math.floor((Math.random() * data.fonts.length) + 1);
+        return data.fonts[index].font;
+    };
+
+var data = {
+          fonts:[
+            { font:"Adobe Arabic"},
+            { font:"Adobe Caslon Pro"},
+            { font:"Adobe Devanagari"},
+            { font:"Adobe Fan Heiti Std"},
+            { font:"Adobe Fangsong Std"},
+            { font:"Adobe Garamond Pro"},
+            { font:"Adobe Gothic Std"},
+            { font:"Adobe Gurmukhi"},
+            { font:"Adobe Hebrew"},
+            { font:"Adobe Heiti Std"},
+            { font:"Adobe Kaiti Std"},
+            { font:"Adobe Ming Std"},
+            { font:"Adobe Myungjo Std"},
+            { font:"Adobe Naskh"},
+            { font:"Adobe Song Std"},
+            { font:"Aileron"},
+            { font:"Airplane"},
+            { font:"Al Bayan"},
+            { font:"Al Nile"},
+            { font:"Al Tarikh"},
+            { font:"Alegreya"},
+            { font:"Aleo"},
+            { font:"Amatic SC"},
+            { font:"American Captain"},
+            { font:"American Typewriter"},
+            { font:"Andale Mono"},
+            { font:"Anonymous Pro"},
+            { font:"another shabby"},
+            { font:"Antonio"},
+            { font:"Apple Braille"},
+            { font:"Apple Chancery"},
+            { font:"Apple Color Emoji"},
+            { font:"Apple SD Gothic Neo"},
+            { font:"Apple Symbols"},
+            { font:"AppleGothic"},
+            { font:"AppleMyungjo"},
+            { font:"Archive"},
+            { font:"Arial"},
+            { font:"Arial Black"},
+            { font:"Arial Hebrew"},
+            { font:"Arial Hebrew Scholar"},
+            { font:"Arial Narrow"},
+            { font:"Arial Unicode MS"},
+            { font:"Arvo"},
+            { font:"Athelas"},
+            { font:"Avenir"},
+            { font:"Avenir Next"},
+            { font:"Avenir Next Condensed"},
+            { font:"Ayuthaya"},
+            { font:"Bad Script"},
+            { font:"Baghdad"},
+            { font:"Bangla MN"},
+            { font:"Bangla Sangam MN"},
+            { font:"Baoli SC"},
+            { font:"Baskerville"},
+            { font:"Baskerville Old Face"},
+            { font:"Batang"},
+            { font:"Bauhaus 93"},
+            { font:"Bebas Neue"},
+            { font:"Beirut"},
+            { font:"Bell MT"},
+            { font:"Besom 2"},
+            { font:"Big Caslon"},
+            { font:"Birch Std"},
+            { font:"Bitter"},
+            { font:"Blackoak Std"},
+            { font:"Blanch"},
+            { font:"Bodoni 72"},
+            { font:"Bodoni 72 Oldstyle"},
+            { font:"Bodoni 72 Smallcaps"},
+            { font:"Bodoni Ornaments"},
+            { font:"Bodoni Std"},
+            { font:"Book Antiqua"},
+            { font:"Bookman Old Style"},
+            { font:"Bookshelf Symbol 7"},
+            { font:"bosun"},
+            { font:"BPreplay"},
+            { font:"Bradley Hand"},
+            { font:"Braggadocio"},
+            { font:"Brush Script MT"},
+            { font:"Brush Script Std"},
+            { font:"Calibri"},
+            { font:"Calisto MT"},
+            { font:"Cambria"},
+            { font:"Cambria Math"},
+            { font:"Candara"},
+            { font:"Cardenio Modern"},
+            { font:"Centaur MT Std"},
+            { font:"Century"},
+            { font:"Century Gothic"},
+            { font:"Century Schoolbook"},
+            { font:"CF Jack Story"},
+            { font:"Chalkboard"},
+            { font:"Chalkboard SE"},
+            { font:"Chalkduster"},
+            { font:"Changa One"},
+            { font:"Chaparral Pro"},
+            { font:"Charlemagne Std"},
+            { font:"Charter"},
+            { font:"CHAWP"},
+            { font:"Cheddar Jack"},
+            { font:"Chivo"},
+            { font:"Chomp"},
+            { font:"Christopherhand"},
+            { font:"Clear Sans"},
+            { font:"Clear Sans Light"},
+            { font:"Clear Sans Medium"},
+            { font:"Clear Sans Thin"},
+            { font:"Cochin"}
+          ]
+        };
+
+    function foo(){ 
+        //replace typed with an input form
+        $(".type-wrap").html("<input id=\"typed\" spellcheck=\"false\" name=\"myinput\" style=\"white-space:pre;\"></input>");
+        $("input[name=myinput]").css("color","#ecf0f1"); 
+        $("input[name=myinput]").val("Let\'s get started, what do you mean to say?(start typing)");
+        $("input[name=myinput]").focus(); 
+        $("input[name=myinput]").keydown(function(e){
+            if( $("input[name=myinput]").val() =="Let\'s get started, what do you mean to say?(start typing)"){
+                    $("input[name=myinput]").val("");
+                }
+        }); 
+        $("input[name=myinput]").keyup(function(e){
+            var code = e.which; 
+            if(code==13)e.preventDefault();
+            if(code==13){
+                console.log("text fully entered");
+                loadfonts();
+            } // missing closing if brace
+        }); 
+    }
+
+    </script>
+    <link href="main.css" rel="stylesheet"/>
+</head>
+<body>
+
+
+    <div class="type-wrap">
+        <span id="typed" style="white-space:pre;"></span>
+    </div>
+</body>
+</html>
