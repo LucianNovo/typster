@@ -114,21 +114,14 @@ body,
 }
 
 /* Menu */
-
-.menu-wrap-left {
+.menu-wrap {
 	position: absolute;
-	left: 0px;
 	z-index: 1001;
 	width: 300px;
 	height: 100%;
-
-	overflow-y: scroll;
-
 	background: #373a47;
 	padding: 2.5em 1.5em 0;
 	font-size: 1.15em;
-	overflow-y: scroll;
-
 	-webkit-transform: translate3d(-320px,0,0);
 	transform: translate3d(-320px,0,0);
 	-webkit-transition: -webkit-transform 0.4s;
@@ -136,34 +129,6 @@ body,
 	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 }
-
-.menu-wrap-left::-webkit-scrollbar{
-	display: none;
-}
-
-.menu-wrap-right {
-	position: absolute;
-	right: 0px;
-	z-index: 1001;
-	width: 300px;
-	height: 100%;
-
-	overflow-y: scroll;
-
-	background: #373a47;
-	padding: 2.5em 1.5em 0;
-	font-size: 1.15em;
-	-webkit-transform: translate3d(320px,0,0);
-	transform: translate3d(320px,0,0);
-	-webkit-transition: -webkit-transform 0.4s;
-	transition: transform 0.4s;
-	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-}
-.menu-wrap-right::-webkit-scrollbar{
-	display: none;
-}
->>>>>>> master
 
 .menu, 
 .icon-list {
@@ -188,15 +153,6 @@ body,
 	transition: transform 0s 0.4s;
 	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-}
-
-.icon-list a {
-	border-style: solid;
-	height: 120px;
-	margin-bottom: 20px;
-	border-radius: 4px 4px 4px 4px;
-	background-color: lightgrey;
-	border-color: lightgrey;
 }
 
 .icon-list a:nth-child(2) {
@@ -224,33 +180,13 @@ body,
 	transform: translate3d(0,3000px,0);
 }
 
-.icon-list a:nth-child(7) {
-	-webkit-transform: translate3d(0,3500px,0);
-	transform: translate3d(0,3500px,0);
-}
-
-.icon-list a:nth-child(8) {
-	-webkit-transform: translate3d(0,4000px,0);
-	transform: translate3d(0,4000px,0);
-}
-
-.icon-list a:nth-child(9) {
-	-webkit-transform: translate3d(0,4500px,0);
-	transform: translate3d(0,4500px,0);
-}
-
-.icon-list a:nth-child(10) {
-	-webkit-transform: translate3d(0,5000px,0);
-	transform: translate3d(0,5000px,0);
-}
-
 .icon-list a span {
 	margin-left: 10px;
 	font-weight: 700;
 }
 
-/* Shown menu left */
-.show-menu-left .menu-wrap-left {
+/* Shown menu */
+.show-menu .menu-wrap {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 	-webkit-transition: -webkit-transform 0.8s;
@@ -259,8 +195,8 @@ body,
 	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 }
 
-.show-menu-left .icon-list,
-.show-menu-left .icon-list a {
+.show-menu .icon-list,
+.show-menu .icon-list a {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 	-webkit-transition: -webkit-transform 0.8s;
@@ -269,60 +205,12 @@ body,
 	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 }
 
-.show-menu-left .icon-list a {
+.show-menu .icon-list a {
 	-webkit-transition-duration: 0.9s;
 	transition-duration: 0.9s;
-	border-style: solid;
-	height: 120px;
-	margin-bottom: 20px;
-	border-radius: 4px 4px 4px 4px;
-	background-color: lightgrey;
-	border-color: lightgrey;
 }
 
-
-.show-menu-left .content::before {
-	opacity: 1;
-	-webkit-transition: opacity 0.8s;
-	transition: opacity 0.8s;
-	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-}
-
-/* Shown menu right */
-.show-menu-right .menu-wrap-right {
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-	-webkit-transition: -webkit-transform 0.8s;
-	transition: transform 0.8s;
-	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-}
-
-.show-menu-right .icon-list,
-.show-menu-right .icon-list a {
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-	-webkit-transition: -webkit-transform 0.8s;
-	transition: transform 0.8s;
-	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-}
-
-.show-menu-right .icon-list a {
-	-webkit-transition-duration: 0.9s;
-	transition-duration: 0.9s;
-	border-style: solid;
-	height: 120px;
-	margin-bottom: 20px;
-	border-radius: 4px 4px 4px 4px;
-	background-color: lightgrey;
-	border-color: lightgrey;
-}
-
-.show-menu-right .content::before {
+.show-menu .content::before {
 	opacity: 1;
 	-webkit-transition: opacity 0.8s;
 	transition: opacity 0.8s;
